@@ -19,7 +19,7 @@ public class RequestValidator {
       throw new InvalidRequestException(USERNAME_MISSING, HttpStatus.BAD_REQUEST.toString());
     } else if (ObjectUtils.isEmpty(createLoginUserRequestBody.getPassword())) {
       throw new InvalidRequestException(PASSWORD_MISSING, HttpStatus.BAD_REQUEST.toString());
-    } else {
+    } else if (ObjectUtils.isEmpty(createLoginUserRequestBody.getUsername()) && ObjectUtils.isEmpty(createLoginUserRequestBody.getPassword())) {
       throw new InvalidRequestException(USERNAME_PASSWORD_MISSING, HttpStatus.BAD_REQUEST.toString());
     }
   }
@@ -29,7 +29,7 @@ public class RequestValidator {
       throw new InvalidRequestException(USERNAME_MISSING, HttpStatus.BAD_REQUEST.toString());
     } else if (ObjectUtils.isEmpty(sendMessageRequestBody.getText())) {
       throw new InvalidRequestException(VALID_MESSAGE, HttpStatus.BAD_REQUEST.toString());
-    } else {
+    } else if (ObjectUtils.isEmpty(sendMessageRequestBody.getTo()) && ObjectUtils.isEmpty(sendMessageRequestBody.getText())) {
       throw new InvalidRequestException(VALID_USERNAME_MESSAGE, HttpStatus.BAD_REQUEST.toString());
     }
   }
