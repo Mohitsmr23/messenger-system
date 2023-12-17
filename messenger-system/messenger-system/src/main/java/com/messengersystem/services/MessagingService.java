@@ -63,6 +63,7 @@ public class MessagingService {
   }
 
   public UserCreatedResponseBody createUser(CreateLoginUserRequestBody createLoginUserRequestBody) {
+    RequestValidator.validateCreateAndLoginUserRequest(createLoginUserRequestBody);
     if (usersMap.containsKey(createLoginUserRequestBody.getUsername())) {
       return UserCreatedResponseBody.builder()
           .status(FAILURE_STATUS)
@@ -77,6 +78,7 @@ public class MessagingService {
   }
 
   public SuccessResponseBody loginUser(CreateLoginUserRequestBody createLoginUserRequestBody) {
+    RequestValidator.validateCreateAndLoginUserRequest(createLoginUserRequestBody);
     if (usersMap.containsKey(createLoginUserRequestBody.getUsername()) &&
         usersMap.get(createLoginUserRequestBody.getUsername()).equals(createLoginUserRequestBody.getPassword())) {
       loginSessionsSet.add(createLoginUserRequestBody.getUsername());
@@ -105,6 +107,7 @@ public class MessagingService {
   }
 
   public SuccessResponseBody logOut(LogoutRequestBody logoutRequestBody) {
+    RequestValidator.validateLogoutRequestBody(logoutRequestBody);
     if (loginSessionsSet.contains(logoutRequestBody.getUsername())) {
       loginSessionsSet.remove(logoutRequestBody.getUsername());
       return SuccessResponseBody.builder()
@@ -119,6 +122,7 @@ public class MessagingService {
   }
 
   public SuccessResponseBody sendMessage(String senderUsername, SendMessageRequestBody sendMessageRequestBody) {
+    RequestValidator.validateSendMessageRequest(sendMessageRequestBody);
     if (loginSessionsSet.contains(senderUsername)) {
       if (usersMap.containsKey(senderUsername) || usersMap.containsKey(sendMessageRequestBody.getTo())) {
         persistMessages(senderUsername, sendMessageRequestBody, unreadMessagesMap, senderReceiverMap, false);
