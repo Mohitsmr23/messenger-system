@@ -73,7 +73,7 @@ curl --location 'http://localhost:8080/logout' \
 5. Now since all the step ups are there go to your location where you have cloned the github repository mentioned in step1 using your terminal(Mac) command prompt(Windows) using ```cd``` command like below:
 ```cd messenger-system```
 6. Again do ```cd messenger-system``` this will make sure you have reached to the root folder
-7. To make sure you have reached to the root folder type ```ls``` which will list all the files and directories exists and see whether Dockerfile is present in it or not if it is then you are at root folder.
+7. To make sure you have reached to the root folder type ```ls``` which will list all the files and directories exists and see whether Dockerfile is present in it or not if it is then you are at root folder
 Note ```ls``` is used for Mac and for windows you can use ```dir``` 
 8. Now run you docker desktop
 9. Run command  ```docker build -t messenger-system .```
