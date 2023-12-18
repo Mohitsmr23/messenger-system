@@ -63,8 +63,9 @@ curl --location 'http://localhost:8080/logout' \
 5. For get chat history if a user1 has send message to user2 and you fetch chat history of chat between user1 and ? friend=user2 then in response it will show "user1: "message sent by user1 to user2", "user2":" the text for user2 will be empty since user2 has not send any message to user1 .Once user2 sends message to user1 then the message will reflect like "user1: "message sent by user1 to user2", "user2":"Message sent by user2 to user1""
 
 # Requirements and Steps to Run the Application
-1. Clone the repository from below github url provided below
- ```https://github.com/Mohitsmr23/messenger-system```
+1. Clone the repository from github using provided command below
+Repository Url: ```https://github.com/Mohitsmr23/messenger-system```
+Command to clone: ```git clone https://github.com/Mohitsmr23/messenger-system.git```
 2. You should have docker desktop installed on your local.You can use below link to download the docker desktop suitable for your local
 ```https://www.docker.com/products/docker-desktop/```
 3. You should have api platform like Postman to test and run APIs.I will recommend Postman to download as it is user friendly and easy to use.You can use below link to download the Postman which suits your local 
