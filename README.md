@@ -82,4 +82,5 @@ Note ```ls``` is used for Mac and for windows you can use ```dir```
 12. Once image is built successfully you can run command ```docker run -p 8080:8080 messenger-system```
 13. After successfully doing all the step you can see your spring boot application running 
 14. Start hitting APIs from postman to test it 
-Note: you can give any image name of your choice in place of messenger-system used in command ```docker build -t messenger-system .``` (Note after messenger-system . is a part of command that you need to run in terminal).Similarly in command ```docker run -p 8080:8080 messenger-system``` you can replace messenger-system with name of image that you have used while building your docker image using ```docker build -t <name-of-image> .``` Replace whole <name-of-image> with name of image you want to give
+## Note: 
+you can give any image name of your choice in place of messenger-system used in command ```docker build -t messenger-system .``` (Note after messenger-system . is a part of command that you need to run in terminal).Similarly in command ```docker run -p 8080:8080 messenger-system``` you can replace messenger-system with name of image that you have used while building your docker image using ```docker build -t <name-of-image> .``` Replace whole <name-of-image> with name of image you want to give
